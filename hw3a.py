@@ -93,6 +93,7 @@ def solve_matrix(augmented_matrix):
     of linear equations.  Cholesky method and Doolittle Method.
     If the function is_positive_definite is true, then the Cholesky
     method executes, if false the Doolittle method will execute.
+    chatgpt assisted in the development of this function
     """
     n = len(augmented_matrix)
     matrix = [row[:-1] for row in augmented_matrix]  # Coefficient matrix
