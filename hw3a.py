@@ -91,27 +91,26 @@ def solve_matrix(augmented_matrix):
     """
     This function provides 2 different methods for solving a system
     of linear equations.  Cholesky method and Doolittle Method.
-    ,
-    :param augmented_matrix:
-    :return:
+    If the function is_positive_definite is true, then the Cholesky
+    method executes, if false the Doolittle method will execute.
     """
     n = len(augmented_matrix)
     matrix = [row[:-1] for row in augmented_matrix]  # Coefficient matrix
     b = [row[-1] for row in augmented_matrix]  # Right-hand side vector
     if is_positive_definite(matrix):
-         # Use Cholesky decomposition
+        # Use Cholesky method
          L = Cholesky_Method(matrix)
          LT = transpose_matrix(L)
          y = forward_substitution(L, b)
          x = backward_substitution(LT, y)
-         print("The Cholesky Method")
+         print("Used the Cholesky Method")
          print("Solution: ", x)
     else:
          # Use Doolittle's method
          L, U = doolittle(matrix)  # Pass the coefficient matrix, not the augmented matrix
          y = forward_substitution(L, b)
          x = backward_substitution(U, y)
-         print("The Doolittle Method")
+         print("Used the Doolittle Method")
          print("Solution: ", x)
 
 augmented_matrix = [[1, -1, 3, 2, 15],
