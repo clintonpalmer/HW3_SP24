@@ -1,5 +1,15 @@
 
 def doolittle(matrix):
+    """
+    Performs Doolittle's method for LU decomposition on a given square matrix.
+    The function decomposes a given square matrix into the product of a lower triangular matrix (L) and an upper triangular matrix (U).
+    Parameters:
+    matrix (list of list of float): The square matrix to be decomposed.
+    Returns:
+    L (list of list of float): The lower triangular matrix resulting from the LU decomposition.
+    U (list of list of float): The upper triangular matrix resulting from the LU decomposition.
+    chatgpt assisted in developing this function
+    """
     n = len(matrix)
     L = [[0.0] * n for i in range(n)]
     U = [[0.0] * n for i in range(n)]
