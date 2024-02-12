@@ -25,9 +25,7 @@ def distribution(m, u):
         chatgpt assisted in developing this function
         """
         return math.gamma((m + 1) / 2) / (math.sqrt(m * math.pi) * math.gamma(m / 2)) * (1 + (x ** 2)/ m) ** ( - (m + 1) / 2)
-
-    prob = simp_rule(Fz, 0, u, 1000) + 0.5
-    return prob
+    return simp_rule(Fz, 0, u, 1000) + 0.5
 
 def main():
     """
